@@ -1,0 +1,118 @@
+== pwd ==
+/home/ubuntu
+== whoami ==
+ubuntu
+== uname -a ==
+Linux ip-172-31-36-72 7.0.0-1006-aws #6-Ubuntu SMP PREEMPT Tue May 26 12:04:34 UTC 2026 x86_64 GNU/Linux
+== ls -la ==
+total 36
+drwxr-x--- 5 ubuntu ubuntu 4096 Sep 15 18:28 .
+drwxr-xr-x 3 root   root   4096 Sep 15 17:06 ..
+-rw-r--r-- 1 ubuntu ubuntu  220 Feb 13  2026 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3771 Feb 13  2026 .bashrc
+drwx------ 2 ubuntu ubuntu 4096 Sep 15 18:03 .cache
+drwx------ 3 ubuntu ubuntu 4096 Sep 15 18:14 .config
+-rw-r--r-- 1 ubuntu ubuntu  807 Feb 13  2026 .profile
+drwx------ 2 ubuntu ubuntu 4096 Sep 15 17:06 .ssh
+-rw-rw-r-- 1 ubuntu ubuntu  176 Sep 15 18:28 logs.txt
+== mkdir test_dir ==
+== cd test_dir ==
+/home/ubuntu/test_dir
+== touch file1.txt ==
+== cp file1.txt file2.txt ==
+== mv file2.txt renamed.txt ==
+== cat renamed.txt ==
+== head /etc/os-release ==
+PRETTY_NAME="Ubuntu 26.04 LTS"
+NAME="Ubuntu"
+VERSION_ID="26.04"
+VERSION="26.04 LTS (Resolute Raccoon)"
+VERSION_CODENAME=resolute
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+== tail /etc/os-release ==
+VERSION="26.04 LTS (Resolute Raccoon)"
+VERSION_CODENAME=resolute
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=resolute
+LOGO=ubuntu-logo
+== chmod 644 renamed.txt ==
+== df -h ==
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root        6.7G  2.3G  4.4G  35% /
+tmpfs            455M     0  455M   0% /dev/shm
+tmpfs            182M  908K  181M   1% /run
+efivarfs         128K  3.1K  120K   3% /sys/firmware/efi/efivars
+tmpfs            455M     0  455M   0% /tmp
+none             1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+none             1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+/dev/nvme0n1p13  989M   96M  827M  11% /boot
+/dev/nvme0n1p15  105M  6.3M   99M   7% /boot/efi
+none             1.0M     0  1.0M   0% /run/credentials/systemd-networkd.service
+none             1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+none             1.0M     0  1.0M   0% /run/credentials/serial-getty@ttyS0.service
+tmpfs             91M   12K   91M   1% /run/user/1000
+== du -sh . ==
+4.0K	.
+== ps aux | head -10 ==
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  1.7  25252 16056 ?        Ss   17:06   0:02 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    17:06   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    17:06   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   17:06   0:00 [kworker/R-rcu_gp]
+root           5  0.0  0.0      0     0 ?        I<   17:06   0:00 [kworker/R-sync_wq]
+root           6  0.0  0.0      0     0 ?        I<   17:06   0:00 [kworker/R-kvfree_rcu_reclaim]
+root           7  0.0  0.0      0     0 ?        I<   17:06   0:00 [kworker/R-slub_flushwq]
+root           8  0.0  0.0      0     0 ?        I<   17:06   0:00 [kworker/R-netns]
+root          10  0.0  0.0      0     0 ?        I<   17:06   0:00 [kworker/0:0H-kblockd]
+== top -bn1 | head -15 ==
+top - 18:28:52 up  1:22,  1 user,  load average: 0.00, 0.00, 0.00
+Tasks: 117 total,   1 running, 116 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :    908.7 total,    149.3 free,    329.5 used,    544.6 buff/cache     
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    579.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   25252  16056  10920 S   0.0   1.7   0:02.17 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_wo+
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+== ping -c 4 google.com ==
+PING google.com (142.250.217.110) 56(84) bytes of data.
+64 bytes from sea09s30-in-f14.1e100.net (142.250.217.110): icmp_seq=1 ttl=117 time=17.5 ms
+64 bytes from sea09s30-in-f14.1e100.net (142.250.217.110): icmp_seq=2 ttl=117 time=17.4 ms
+64 bytes from sea09s30-in-f14.1e100.net (142.250.217.110): icmp_seq=3 ttl=117 time=17.5 ms
+64 bytes from sea09s30-in-f14.1e100.net (142.250.217.110): icmp_seq=4 ttl=117 time=17.4 ms
+
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 17.439/17.468/17.540/0.041 ms
+== ip a ==
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
+    link/ether 0a:ff:fb:5c:d9:13 brd ff:ff:ff:ff:ff:ff
+    altname enp0s5
+    altname enx0afffb5cd913
+    inet 172.31.36.72/20 metric 100 brd 172.31.47.255 scope global dynamic ens5
+       valid_lft 2247sec preferred_lft 2247sec
+    inet6 fe80::8ff:fbff:fe5c:d913/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+== tar -czvf test_dir.tar.gz renamed.txt ==
+renamed.txt
